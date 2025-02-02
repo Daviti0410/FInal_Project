@@ -1,6 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import CustomImage from "@/components/CustomImage";
+import ProductList from "@/components/ProductList";
 
 export default async function ProtectedPage() {
   const supabase = await createClient();
@@ -18,6 +19,7 @@ export default async function ProtectedPage() {
       <div className="w-full flex justify-center mt-10">
         <CustomImage />
       </div>
+      <ProductList />
     </div>
   );
 }

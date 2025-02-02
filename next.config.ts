@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["thumbs.dreamstime.com"], // ✅ This should not be inside remotePatterns
+    domains: ["thumbs.dreamstime.com"],
     remotePatterns: [
       {
         protocol: "https",

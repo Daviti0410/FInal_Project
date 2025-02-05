@@ -19,7 +19,7 @@ export default async function ProtectedPage() {
       <div className="w-full flex justify-center mt-10">
         <CustomImage />
       </div>
-      <ProductList />
+      <ProductList user_id={user.id} />
     </div>
   );
 }

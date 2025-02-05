@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { createClient } from "@/utils/supabase/server";
+import { FaBucket } from "react-icons/fa6";
 
 export default async function AuthButton() {
   const supabase = await createClient();
@@ -50,8 +51,9 @@ export default async function AuthButton() {
   }
   return user ? (
     <div className="flex items-center gap-4">
+      <FaBucket className="cursor-pointer text-red-800 text-xl" />
       <div className="cursor-pointer">
-        <Link href={"protected/Profile"}>
+        <Link href={"/protected/Profile"}>
           Hey, {user.user_metadata?.full_name}!
         </Link>
       </div>

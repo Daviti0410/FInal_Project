@@ -51,7 +51,9 @@ export default async function AuthButton() {
   }
   return user ? (
     <div className="flex items-center gap-4">
-      <FaBucket className="cursor-pointer text-red-800 text-xl" />
+      <Link href="/protected/Bucket">
+        <FaBucket className="cursor-pointer text-red-800 text-xl" />
+      </Link>
       <div className="cursor-pointer">
         <Link href={"/protected/Profile"}>
           Hey, {user.user_metadata?.full_name}!

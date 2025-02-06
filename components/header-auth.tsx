@@ -50,21 +50,26 @@ export default async function AuthButton() {
     );
   }
   return user ? (
-    <div className="flex items-center gap-4">
-      <Link href="/protected/Bucket">
-        <FaBucket className="cursor-pointer text-red-800 text-xl" />
-      </Link>
-      <div className="cursor-pointer">
-        <Link href={"/protected/Profile"}>
-          Hey, {user.user_metadata?.full_name}!
+    <>
+      <div>
+        <Link href="/protected/Blogs">
+          <h2 className="font-medium text-lg hover:text-slate-300">Blogs</h2>
         </Link>
       </div>
-      <form action={signOutAction}>
-        <Button type="submit" variant={"outline"}>
-          Sign out
-        </Button>
-      </form>
-    </div>
+      <div className="flex items-center gap-4">
+        <Link href="/protected/Bucket">
+          <FaBucket className="cursor-pointer text-red-800 text-xl" />
+        </Link>
+        <div className="cursor-pointer">
+          <Link href={"/protected/Profile"}>Hey, {user?.email}!</Link>
+        </div>
+        <form action={signOutAction}>
+          <Button type="submit" variant={"outline"}>
+            Sign out
+          </Button>
+        </form>
+      </div>
+    </>
   ) : (
     <div className="flex gap-2">
       <Button asChild size="sm" variant={"outline"}>

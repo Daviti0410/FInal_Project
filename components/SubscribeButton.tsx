@@ -33,6 +33,9 @@ export default function SubscribeButton({
 
         if (result.error) {
           console.error(result.error.message);
+        } else {
+          console.log(" Payment successful! Reloading...");
+          window.location.reload();
         }
       }
     } catch (error) {

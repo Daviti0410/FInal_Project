@@ -38,11 +38,11 @@ export default function ProductCard({
 
       if (response.ok) {
         const result = await response.json();
-        const updatedProduct = result.data; // Ensure 'data' contains the updated product
+        const updatedProduct = result.data;
 
         if (updatedProduct && updatedProduct.id) {
           setIsEditing(false);
-          onUpdate(updatedProduct); // Pass the updated product to the handler
+          onUpdate(updatedProduct);
         } else {
           console.error("Invalid response from server:", result);
         }

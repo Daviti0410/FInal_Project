@@ -42,7 +42,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-gray-100 rounded-lg shadow-md">
+    <div className="w-96 mx-auto p-6 bg-zinc-300 dark:bg-gray-700 rounded-lg shadow-md">
       <h1 className="text-2xl font-bold mb-4">Contact Us</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <input
@@ -71,7 +71,10 @@ export default function Contact() {
           required
           className="p-2 border rounded-md h-24"
         />
-        <button type="submit" className="bg-blue-500 text-white p-2 rounded-md">
+        <button
+          type="submit"
+          className="bg-stone-600 text-white p-2 rounded-md hover:bg-stone-500"
+        >
           Send Message
         </button>
       </form>

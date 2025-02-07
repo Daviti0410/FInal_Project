@@ -73,7 +73,7 @@ export default function ProductCard({
   };
 
   return (
-    <div className="border p-4 rounded-md shadow-md bg-gray-800 text-white">
+    <div className="border p-4 rounded-md shadow-md bg-zinc-300 dark:bg-gray-700 text-slate-800 dark:text-white">
       {isEditing ? (
         <div>
           <input
@@ -119,13 +119,13 @@ export default function ProductCard({
 
           <button
             onClick={() => setIsEditing(true)}
-            className="px-4 py-2 bg-blue-500 text-white rounded-md mr-2"
+            className="px-4 py-2 bg-cyan-600 text-white rounded-md mr-2"
           >
             Edit
           </button>
           <button
             onClick={handleDelete}
-            className="px-4 py-2 bg-red-500 text-white rounded-md"
+            className="px-4 py-2 bg-neutral-700 text-white rounded-md"
           >
             Delete
           </button>

@@ -4,7 +4,6 @@ import UploadButton from "@/components/UploadButton";
 import UserProducts from "@/components/UserProducts";
 import EditProfile from "@/components/EditProfile";
 import SubscribeButton from "@/components/SubscribeButton";
-import { revalidatePath } from "next/cache";
 
 export default async function Profile({
   searchParams,
@@ -65,9 +64,9 @@ export default async function Profile({
 
   return (
     <div className="flex flex-col items-center gap-9">
-      <div className="flex gap-9 justify-center">
+      <div className="flex gap-9 justify-center max-[510px]:flex-col">
         <Image
-          className="rounded-lg"
+          className="rounded-lg max-h-[200px]"
           src={user.user_metadata?.avatar_url || "/default-avatar.png"}
           alt="Profile Image"
           width={200}

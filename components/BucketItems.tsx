@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
-
+import { RxCrossCircled } from "react-icons/rx";
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY!);
 
 interface Product {
@@ -83,7 +83,7 @@ export default function BucketItems({ user, bucketItems }: BucketItemsProps) {
   };
 
   return (
-    <div className="p-4 mt-20">
+    <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Your Bucket</h1>
 
       {items.length === 0 ? (
@@ -93,13 +93,13 @@ export default function BucketItems({ user, bucketItems }: BucketItemsProps) {
           {items.map((product) => (
             <div
               key={product.id}
-              className="border rounded-lg shadow-md p-4 bg-gray-800 text-white relative"
+              className="border rounded-lg shadow-md p-4 bg-gray-300 dark:bg-gray-800 text-black dark:text-white relative"
             >
               <button
                 onClick={() => handleDelete(product.id)}
-                className="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 rounded-full hover:bg-red-600 transition"
+                className="absolute top-0 right-0 mr-[-10px] mt-[-5px] text-xl text-red-500 dark:text-white px-2 py-1 rounded-full hover:text-red-700 transition"
               >
-                -
+                <RxCrossCircled />
               </button>
               <img
                 src={product.image_url}
@@ -109,8 +109,12 @@ export default function BucketItems({ user, bucketItems }: BucketItemsProps) {
               <h2 className="text-xl font-semibold mt-2">
                 {product.product_name}
               </h2>
-              <p className="text-gray-300">{product.description}</p>
-              <p className="text-green-400 font-bold mt-1">${product.price}</p>
+              <p className="text-neutral-900 dark:text-gray-300">
+                {product.description}
+              </p>
+              <p className="text-green-600 dark:text-green-400 font-bold mt-1">
+                ${product.price}
+              </p>
             </div>
           ))}
         </div>

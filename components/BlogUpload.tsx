@@ -34,7 +34,7 @@ export default function BlogUpload({
   };
 
   return (
-    <div className="p-4 bg-slate-800 mb-10 rounded-md">
+    <div className="p-4 bg-slate-200 dark:bg-neutral-700  mb-10 rounded-md">
       <h2 className="text-2xl font-bold mb-4">Upload a Blog</h2>
       {message && <p className="text-green-500">{message}</p>}
       <form onSubmit={handleSubmit} className="space-y-4">

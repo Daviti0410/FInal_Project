@@ -55,9 +55,9 @@ export default function EditProfile({ user }: EditProfileProps) {
     setLoading(false);
   };
   return (
-    <div className="p-4 border rounded-lg shadow-md bg-gray-800 text-white">
+    <div className="p-4 border rounded-lg shadow-md bg-slate-300 text-black dark:bg-gray-800 dark:text-white">
       {isEditing ? (
-        <div>
+        <div className="flex flex-col">
           <input
             type="text"
             value={formData.full_name}
@@ -65,7 +65,7 @@ export default function EditProfile({ user }: EditProfileProps) {
               setFormData({ ...formData, full_name: e.target.value })
             }
             placeholder="Full Name"
-            className="w-full p-2 rounded bg-gray-700 mb-2"
+            className="w-auto p-2 rounded bg-gray-700 mb-2"
           />
           <input
             type="email"
@@ -74,7 +74,7 @@ export default function EditProfile({ user }: EditProfileProps) {
               setFormData({ ...formData, email: e.target.value })
             }
             placeholder="Email"
-            className="w-full p-2 rounded bg-gray-700 mb-2"
+            className="w-auto p-2 rounded bg-gray-700 mb-2"
           />
           <input
             type="text"
@@ -83,21 +83,23 @@ export default function EditProfile({ user }: EditProfileProps) {
               setFormData({ ...formData, phone: e.target.value })
             }
             placeholder="Phone (optional)"
-            className="w-full p-2 rounded bg-gray-700 mb-2"
+            className="w-auto p-2 rounded bg-gray-700 mb-2"
           />
-          <button
-            onClick={handleUpdate}
-            className="px-4 py-2 bg-green-500 text-white rounded-md"
-            disabled={loading}
-          >
-            {loading ? "Saving..." : "Save"}
-          </button>
-          <button
-            onClick={() => setIsEditing(false)}
-            className="ml-2 px-4 py-2 bg-red-500 text-white rounded-md"
-          >
-            Cancel
-          </button>
+          <div className="flex flex-row">
+            <button
+              onClick={handleUpdate}
+              className="px-4 py-2 bg-green-500 text-white rounded-md"
+              disabled={loading}
+            >
+              {loading ? "Saving..." : "Save"}
+            </button>
+            <button
+              onClick={() => setIsEditing(false)}
+              className="ml-2 px-4 py-2 bg-red-500 text-white rounded-md"
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       ) : (
         <div>

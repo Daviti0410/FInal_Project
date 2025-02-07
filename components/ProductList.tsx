@@ -137,7 +137,7 @@ export default function ProductList({ user_id }: UserProps) {
           filteredAndSortedProducts.map((product) => (
             <div
               key={product.id}
-              className="border rounded-lg shadow-md p-4 bg-gray-800 text-white transition-transform hover:scale-105"
+              className="border rounded-lg shadow-md p-4 bg-slate-300 text-slate-700 dark:bg-gray-800 dark:text-white transition-transform hover:scale-105"
             >
               <img
                 src={product.image_url}
@@ -147,11 +147,15 @@ export default function ProductList({ user_id }: UserProps) {
               <h2 className="text-xl font-semibold mt-2">
                 {product.product_name}
               </h2>
-              <p className="text-gray-300 mt-1">{product.description}</p>
-              <p className="text-green-400 font-bold mt-1">${product.price}</p>
+              <p className="text-gray-700 dark:text-gray-300 mt-1">
+                {product.description}
+              </p>
+              <p className="text-green-500 dark:text-green-400 font-bold mt-1">
+                ${product.price}
+              </p>
 
               <button
-                className={`w-full bg-orange-600 px-5 py-2 mt-3 rounded-lg transition ${
+                className={`w-full text-white bg-orange-600 px-5 py-2 mt-3 rounded-lg transition ${
                   addingToCart === product.id
                     ? "bg-orange-400 cursor-not-allowed"
                     : "hover:bg-orange-700"

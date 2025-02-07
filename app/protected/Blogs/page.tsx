@@ -61,7 +61,7 @@ export default function BlogPage() {
             >
               <div>
                 <h2 className="text-xl font-semibold">{blog.title}</h2>
-                <p className="text-gray-700">{blog.description}</p>
+                <p className="text-gray-500">{blog.description}</p>
                 <p className="text-sm text-gray-500 mt-2">
                   {new Date(blog.created_at).toLocaleString()}
                 </p>
